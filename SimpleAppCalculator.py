@@ -5,20 +5,17 @@
 
 # handling unchecked exception 
 try: 
-    def button_click(number):
-        current = input_box.get()
-        input_box.delete(0, tk.END)
-        input_box.insert(0, str(current) + str(number))
-except TypeError:
-    print("ERRORRRR")
-except IndentationError:
-    print("Indentation error found.")
+    import tkiasdasnter as tk
 
-except:
+    root = tk.Tk()
+    root.title("Calculator")
+    root.geometry("345x460")
+    root.resizable(0,0) 
+    root.configure(bg="black")
+
+except ImportError:
     print("Error alert.")
 
-finally:
-    print("No error found.")
 
 
 
@@ -32,5 +29,4 @@ root.geometry("345x460")
 root.resizable(0,0)
 root.configure(bg="black")
 
-root.mainloop()
 
