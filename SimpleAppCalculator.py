@@ -5,7 +5,7 @@
 
 # handling unchecked exception 
 try: 
-    import tkiasdasnter as tk
+    import tkinter as tk
 
     root = tk.Tk()
     root.title("Calculator")
@@ -16,6 +16,8 @@ try:
 except ImportError:
     print("Error alert.")
 
+finally:
+    print("No error found.")
 
 
 
