@@ -19,15 +19,58 @@ def button_click(number):
     entry_num.delete(0, END)
     entry_num.insert(0, str(current_number) + str(number))
 
+# define clear button 
 def button_clear():
     entry_num.delete(0, END)
 
+# define add button 
 def button_add():
     first_number = entry_num.get()
-    global first_num 
+    global first_num
+    global math_operation
+    math_operation = "addition"
     first_num = int(first_number)
-    entry_num.delete(0, END)
+    entry_num.delete(0, Tk.END)
 
+# define subtract button 
+def button_subtract():
+    first_number = entry_num.get()
+    global first_num
+    global math_operation
+    math_operation = "subtraction"
+    first_num = int(first_number)
+    entry_num.delete(0, Tk.END)
+   
+
+# define smultiplication button 
+def button_multiplication():
+    first_number = entry_num.get()
+    global first_num
+    global math_operation
+    math_operation = "multiplication"
+    first_num = int(first_number)
+    entry_num.delete(0, Tk.END)
+
+# define division button 
+def button_division():
+    first_number = entry_num.get()
+    global first_num
+    global math_operation
+    math_operation = "division"
+    first_num = int(first_number)
+    entry_num.delete(0, Tk.END)
+
+# operations 
+    if math_operation == "addition":
+        entry_num.insert(0, first_num + int(second_number))
+    elif math_operation == "subtraction":
+        entry_num.insert(0, first_num - int(second_number))
+    elif math_operation == "multiplication":
+        entry_num.insert(0, first_num * int(second_number))
+    elif math_operation == "division":
+        entry_num.insert(0, first_num / int(second_number))
+
+# define equal button
 def button_equal():
     second_number = entry_num.get()
     entry_num.delete(0, END)
@@ -48,7 +91,7 @@ button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click
 button_add = Button(root, text="+", padx=40, pady=20, command=button_add)
 
 # subtract button 
-button_subtract = Button(root, text="-", padx=40, pady=20, command=lambda:button_add)
+button_subtract = Button(root, text="-", padx=40, pady=20, command=button_subtract)
 
 # multiplication button 
 button_multiplication = Button(root, text="x", padx=40, pady=20, command=lambda: button_click())
@@ -87,7 +130,6 @@ button_9.grid(row=2, column=2)
 button_0.grid(row=5, column=0)
 button_decimal.grid(row=5, column=1)
 button_equal.grid(row=5, column=2, columnspan=3)
-
 
 
 root.mainloop()
