@@ -1,5 +1,7 @@
 ---
 # SimpleAppCalculator
 ---
-## About
-This Simple Calculator App allows you to choose whatever math operation you want to execute; Addition, Subtraction, Multiplication and Division. 
+## Summary 
+This calculator allows you to add, subtract, multiply, and divide. I used tkinter for GUI to see / have the actual calculator look.  
+## Example:
+![Calculator](https://github.com/elleee07/SimpleAppCalculator/assets/130200986/f874dfe1-3cc3-4d5f-99f8-d301f9137a1c)
