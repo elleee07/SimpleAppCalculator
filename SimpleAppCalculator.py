@@ -9,72 +9,80 @@ from tkinter import *
 root = Tk() 
 root.title("Calculator")
 
-entry_num = Entry(root, width=35, borderwidth=5)
+entry_num = Entry(root, width=40, borderwidth=10)
 entry_num.grid(row=0, column=0, columnspan=3, padx=10)
 
 # defining buttons 
 def button_click(number):
-    #entry_num.delete(0, END)
-    current_number = entry_num.get()
+    current = entry_num.get()
     entry_num.delete(0, END)
-    entry_num.insert(0, str(current_number) + str(number))
+    entry_num.insert(0, str(current) + str(number))
 
 # define clear button 
 def button_clear():
+    entry_num.delete(0, END)
+
+# define clear entry button
+def button_clearEntry():
+    entry_num.delete(0, END)
+
+# define percentage button
+def button_percentage():
+    entry_num.delete(0, END)
+
+# define decimal button
+def button_decimal():
     entry_num.delete(0, END)
 
 # define add button 
 def button_add():
     first_number = entry_num.get()
     global first_num
-    global math_operation
-    math_operation = "addition"
+    global math 
+    math = "add"
     first_num = int(first_number)
-    entry_num.delete(0, Tk.END)
+    entry_num.delete(0, END)
 
 # define subtract button 
 def button_subtract():
     first_number = entry_num.get()
     global first_num
-    global math_operation
-    math_operation = "subtraction"
+    global math 
+    math = "subtract"
     first_num = int(first_number)
-    entry_num.delete(0, Tk.END)
+    entry_num.delete(0, END)
    
-
-# define smultiplication button 
+# define multiplication button 
 def button_multiplication():
     first_number = entry_num.get()
     global first_num
-    global math_operation
-    math_operation = "multiplication"
+    global math 
+    math = "multiplication"
     first_num = int(first_number)
-    entry_num.delete(0, Tk.END)
+    entry_num.delete(0, END)
 
 # define division button 
 def button_division():
     first_number = entry_num.get()
     global first_num
-    global math_operation
-    math_operation = "division"
+    global math 
+    math = "division"
     first_num = int(first_number)
-    entry_num.delete(0, Tk.END)
-
-# operations 
-    if math_operation == "addition":
-        entry_num.insert(0, first_num + int(second_number))
-    elif math_operation == "subtraction":
-        entry_num.insert(0, first_num - int(second_number))
-    elif math_operation == "multiplication":
-        entry_num.insert(0, first_num * int(second_number))
-    elif math_operation == "division":
-        entry_num.insert(0, first_num / int(second_number))
+    entry_num.delete(0, END)
 
 # define equal button
 def button_equal():
     second_number = entry_num.get()
     entry_num.delete(0, END)
-    entry_num.insert(0, first_num + int(second_number))
+
+    if math == "add":
+        entry_num.insert(0, first_num + int(second_number))
+    if math == "subtract":
+        entry_num.insert(0, first_num - int(second_number))
+    if math == "multiplication":
+        entry_num.insert(0, first_num * int(second_number))
+    if math == "division":
+        entry_num.insert(0, first_num / int(second_number))
 
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
 button_2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2))
@@ -94,17 +102,17 @@ button_add = Button(root, text="+", padx=40, pady=20, command=button_add)
 button_subtract = Button(root, text="-", padx=40, pady=20, command=button_subtract)
 
 # multiplication button 
-button_multiplication = Button(root, text="x", padx=40, pady=20, command=lambda: button_click())
+button_multiplication = Button(root, text="*", padx=40, pady=20, command=button_multiplication)
 
 # division button 
-button_division = Button(root, text="÷", padx=40, pady=20, command=lambda: button_click())
+button_division = Button(root, text="/", padx=40, pady=20, command=button_division)
 
 # function buttons 
 button_equal = Button(root, text="=", padx=93, pady=20, command=button_equal)
-button_clearEntry = Button(root, text="CE", padx=40, pady=20, command=lambda: button_click())
+button_clearEntry = Button(root, text="CE", padx=40, pady=20, command=button_clearEntry)
 button_clear = Button(root, text="C", padx=40, pady=20, command=button_clear)
-button_percentage = Button(root, text="%", padx=40, pady=20, command=lambda: button_click())
-button_decimal = Button(root, text=".", padx=40, pady=20, command=lambda: button_click())
+button_percentage = Button(root, text="%", padx=40, pady=20, command=button_percentage)
+button_decimal = Button(root, text=".", padx=40, pady=20, command=button_decimal)
 
 # putting the buttons on the screen
 button_percentage.grid(row=1, column=0)
