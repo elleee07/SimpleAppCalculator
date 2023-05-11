@@ -34,7 +34,7 @@ def button_percentage():
 def button_decimal():
     entry_num.delete(0, END)
 
-# define add button 
+# define add button
 def button_add():
     first_number = entry_num.get()
     global first_num
