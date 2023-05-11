@@ -29,6 +29,7 @@ button_8 = Button(root, text="2", padx=40, pady=20, command=button_add)
 button_9 = Button(root, text="3", padx=40, pady=20, command=button_add)
 button_0 = Button(root, text="0", padx=40, pady=20, command=button_add)
 button_add = Button(root, text="+", padx=39, pady=20, command=button_add)
+button_equal = Button(root, text="=", padx=39, pady=20, command=button_add)
 
 
 # putting the buttons on the screen 
@@ -45,6 +46,8 @@ button_8.grid(row=1, column=1)
 button_9.grid(row=1, column=2)
 
 button_0.grid(row=4, column=0)
-button_add.grid(row=4, column=3) 
+button_add.grid(row=4, column=2) 
+button_equal.grid(row=5, column=2) 
+
 
 root.mainloop()
